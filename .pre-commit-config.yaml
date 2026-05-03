@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff lint
+        language: system
+        entry: uvx ruff check --fix
+        types: [python]
+      - id: ruff-format
+        name: ruff format
+        language: system
+        entry: uvx ruff format
+        types: [python]
+      - id: pytest
+        name: pytest
+        language: system
+        entry: uv run pytest
+        types: [python]
+        pass_filenames: false
